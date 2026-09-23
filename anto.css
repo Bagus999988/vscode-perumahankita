@@ -66,7 +66,12 @@ body {
   flex: 1;
   min-height: 60vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding-block: 3rem;
+  text-align: center;
   color: #fff;
 }
 
@@ -80,9 +85,87 @@ body {
   margin: 0;
 }
 
+.hero-search {
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.25)
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.search-form input,
+.search-form select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #fff;
+  padding: 0.75rem 1rem;
+}
+
+.search-form input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-form select option {
+  color: #1f2937;
+}
+
+.search-form input {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-form select {
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+}
+
+.search-button {
+  flex-shrink: 0;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+  background: #1d4ed8;
+}
+
 @media (max-width: 640px) {
   .site-hero {
     min-height: 40vh;
+    padding-block: 2rem;
+    gap: 1.5rem;
   }
 
   .hero-content h1 {
@@ -91,6 +174,20 @@ body {
 
   .hero-content p {
     font-size: 1rem;
+  }
+
+  .search-form {
+    flex-direction: column;
+    border-radius: 1rem;
+  }
+
+  .search-form select {
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .search-button {
+    width: 100%;
   }
 }
 
